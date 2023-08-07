@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Bestätigung</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="icon" type="image/png" href="../images/logo.svg">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <style>
+            main {
+                hyphens: auto;
+                margin-top: 77px;
+            }
+            td:nth-child(even) {
+                word-break: break-all;
+                white-space: normal;
+                width: 60%;
+            }
+        </style>
+    </head>
+    <body class="bg-light-subtle">
+        <header>
+            <!-- globale Navigation -->
+            <nav class="navbar navbar-expand-md fixed-top bg-light-subtle p-0">
+                <div class="container-md border-bottom py-2">
+                    <a href="../index.html" class="navbar-brand">
+                        <img src="../images/logo.svg" alt="Logo" width="50" height="50" class="d-inline-block align-text-center">
+                        Kleiderspenden Global
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html#spenden">Spenden</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html#ueberUns">Über uns</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html#kontakt">Kontakt</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="container-md px-4">
+            <h1 class="text-center my-5 pt-5">Vielen Dank für Deine Spende</h1>
+            <!-- Registrierungsdaten -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 mb-3">
+                    <p class="lead mb-4">Die Registrierung deiner Kleidespende war erfolgreich! Hier deine Daten:</p>
+                    <table class="table mb-4">
+                        <tr>
+                            <td>ID</td>
+                            <td id="id"></td>
+                        </tr>
+                        <tr>
+                            <td>Datum / Uhrzeit</td>
+                            <td id="datum"></td>
+                        </tr>
+                        <tr>
+                            <td>Deine Spende</td>
+                            <td id="spende"></td>
+                        </tr>
+                        <tr>
+                            <td>Krisengebiet</td>
+                            <td id="krisengebiet"></td>
+                        </tr>
+                        <tr>
+                            <td>Abholung</td>
+                            <td id="abholart"></td>
+                        </tr>
+                        <tr class="beiAbholung">
+                            <td>Abholadresse</td>
+                            <td id="abholadresse"></td>
+                        </tr>
+                        <tr class="beiAbholung">
+                            <td>E-Mail</td>
+                            <td id="email"></td>
+                        </tr>
+                        <tr class="beiAbholung">
+                            <td>Abholtermin</td>
+                            <td id="abholtermin"></td>
+                        </tr>
+                    </table>
+                    <div id="beiAbgabe">
+                        <p class="mb-2">Um deine Spende optimal vorzubereiten, folge bitte den folgenden Schritten:</p>
+                        <ul>
+                            <li>packe deine Kleiderspende in einen der ausliegenden Müllsäcke, falls noch nicht geschehen</li>
+                            <li>klebe das soeben ausgedruckte Ettiket mit der Registrierungs-ID auf deine Spende</li>
+                            <li>werfe deine Spende in den vorgesehenen Container</li>
+                        </ul>
+                        <p>Vielen Dank für deine Unterstützung!</p>    
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 col-10">
+                    <img src="../images/kleiderspende.jpg" alt="Kleiderspende" class="img-fluid">
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Footer-Navigation -->
+            <nav class="navbar my-4">
+              <div class="container-md justify-content-center">
+                  <div class="navbar-nav mr-auto">
+                      <span class="navbar-text">&#169 2023</span>
+                  </div>
+                  <div class="navbar-nav px-4">
+                      <a class="nav-link" href="impressum.html">Impressum</a>
+                  </div>
+                  <div class="navbar-nav">
+                      <a class="nav-link" href="datenschutz.html">Datenschutz</a>
+                  </div>
+              </div>
+            </nav>
+        </footer>
+        <script src="../scripts/confirmation.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>

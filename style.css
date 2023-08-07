@@ -1,0 +1,55 @@
+main {
+    hyphens: auto;
+}
+
+header > div {
+    margin-top: 77px;
+}
+
+#keyvisual {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    filter: blur(0.6px) brightness(60%);
+    display: none;
+}
+
+main ul {
+    list-style-type: none;
+}
+
+.anchor-target::before {
+    content: "";
+    display: block;
+    height: 80px;
+    margin: -80px 0 0;
+}
+
+#platzhalter {
+    height: 400px;
+}
+
+@media(min-width:576px) {
+    .nowrap{
+        white-space: nowrap;
+    }
+}
+
+i {
+    font-size: xx-large;
+}
+
+/* Verstecken der Pfeile im Input-Number-Fields
+
+/*  für Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* für Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+  }

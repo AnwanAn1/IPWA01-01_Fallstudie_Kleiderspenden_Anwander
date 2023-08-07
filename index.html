@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Kleiderspenden Global</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Willkommen bei Kleiderspenden Global! Spende deine gut erhaltene Kleidung und hilf uns, denjenigen in Not ein Stück Normalität und Würde zurückzugeben. Entscheide selbst, ob du deine Kleidung persönlich bei uns abgeben oder von uns abholen lassen möchtest. Deine Spende geht direkt in die von dir gewählte Krisenregion und kommt den Bedürftigen vor Ort zugute. Erfahre mehr über unsere Mission, unser Team und wie du Teil dieser positiven Veränderung werden kannst.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="icon" type="image/png" href="images/logo.svg" >
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="bg-light-subtle">
+        <header>
+            <!-- globale Navigation -->
+            <nav class="navbar navbar-expand-md fixed-top bg-light-subtle p-0">
+                <div class="container-md border-bottom py-2">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="images/logo.svg" alt="Logo" width="50px" height="50px" class="d-inline-block align-text-center">
+                        Kleiderspenden Global
+                    </a>
+                    <button class="navbar-toggler" type="button" id="navbarButton" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link mainNav" href="#spenden">Spenden</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mainNav" href="#ueberUns">Über uns</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mainNav" href="#kontakt">Kontakt</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Titel -->
+            <div class="container-md p-0 position-relative">
+                <div id="platzhalter"></div>
+                <img src="images/kleidung_keyvisual.jpg" alt="Kleiderständer" id="keyvisual">
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-light">
+                    <h1 class="nowrap display-5 fw-normal">KLEIDERSPENDEN GLOBAL</h1>
+                    <p class="lead">Deine Kleidung. Deine Spende. Deine Wahl.</p>
+                </div>
+            </div>
+        </header>
+        <main class="container-md px-4">
+            <!-- Abschnitt zur Registrierung der Kleiderspende -->
+            <section>
+                <p class="mt-4">Du bestimmst, wir verteilen - Entscheide, welcher Krisenregion deine Spende zugutekommt. Bringe uns deine Kleidung direkt vorbei oder nutze unseren praktischen Abholservice.</p>
+                <h2 class="my-5 text-center anchor-target" id="spenden">Jetzt spenden!</h2>
+                <!-- Formular zur Registrierung der Kleiderspende -->
+                <form>
+                    <!-- Auswahl von Abholung oder Abgabe -->
+                    <div class="my-4">
+                        <p class="text-md-center">Möchtest du deine Kleiderspende abholen lassen oder persönlich abgeben?</p>
+                        <div class="row">
+                            <div class="col-6 d-grid">
+                                <button type="button" name="abholen" class="btn btn-light bg-light-subtle border-2 py-3 active" role="button" data-bs-toggle="button" id="abholen" value="true">
+                                    <i class="bi bi-truck"></i><br>
+                                    abholen lassen
+                                </button>    
+                            </div>
+                            <div class="col-6 d-grid">
+                                <button type="button" name="abgeben" class="btn btn-light bg-light-subtle border-2 py-3" role="button" data-bs-toggle="button" id="abgeben" value="false">
+                                    <i class="bi bi-bag"></i> <br>
+                                    bei uns abgeben
+                                </button>                      
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <!-- Auswahl der Kleidung und deren Anzahl -->
+                            <div class="my-4" id="kleidungsauswahl">
+                                <p>Wähle die <b>Kleidung</b> aus, die du spenden möchtest.</p>
+                                <p id="kleidungFehler" class="text-danger"></p>
+                                <ul class="d-grid gap-2">
+                                    <li>
+                                        <div class="input-group row">
+                                            <div class="input-group-text col-8 py-2">
+                                                <input type="checkbox" name="oberteile" class="form-check-input m-2" id="oberteile">
+                                                <label class="form-check-label" for="oberteile">Oberteile</label>        
+                                            </div>
+                                            <input type="number" name="oberteileAnzahl" class="form-control" id="oberteileAnzahl" min="1" placeholder="Anzahl" disabled>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-group row">
+                                            <div class="input-group-text col-8 py-2">
+                                                <input type="checkbox" name="hosen" class="form-check-input m-2" id="hosen">
+                                                <label class="form-check-label" for="hosen">Hosen</label>
+                                            </div>
+                                            <input type="number" name="hosenAnzahl" class="form-control" id="hosenAnzahl" min="1" placeholder="Anzahl" disabled>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-group row">
+                                            <div class="input-group-text col-8 py-2">
+                                                <input type="checkbox" name="kleider" class="form-check-input m-2" id="kleider">
+                                                <label class="form-check-label" for="kleider">Kleider</label>
+                                            </div>
+                                            <input type="number" name="kleiderAnzahl" class="form-control" id="kleiderAnzahl" min="1" placeholder="Anzahl" disabled>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-group row">
+                                            <div class="input-group-text col-8 py-2">
+                                                <input type="checkbox" name="jacken" class="form-check-input m-2" id="jacken">
+                                                <label class="form-check-label" for="jacken">Jacken/Mäntel</label>
+                                            </div>
+                                            <input type="number" name="jackenAnzahl" class="form-control" id="jackenAnzahl" min="1" placeholder="Anzahl" disabled>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-group row">
+                                            <div class="input-group-text col-8 py-2">
+                                                <input type="checkbox" name="schuhe" class="form-check-input m-2" id="schuhe">
+                                                <label class="form-check-label" for="schuhe">Schuhe</label>
+                                            </div>
+                                            <input type="number" name="schuheAnzahl" class="form-control" id="schuheAnzahl" min="1" placeholder="Anzahl" disabled>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-group row">
+                                            <div class="input-group-text col-8 py-2">
+                                                <input type="checkbox" name="sonstiges" class="form-check-input m-2" id="sonstiges">
+                                                <label class="form-check-label" for="sonstiges">Sonstiges</label>
+                                            </div>
+                                            <input type="number" name="sonstigesAnzahl" class="form-control" id="sonstigesAnzahl" min="1" placeholder="Anzahl" disabled>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Auswahl der Krisenregion -->
+                            <div class="my-4" id="krisengebietAuswahl">
+                                <p>Wähle die <b>Krisenregion</b>, an die deine Spende gehen soll.</p>
+                                <p id="krisengebietFehler" class="text-danger"></p>
+                                <select name="krisengebiet" class="form-select form-select-lg" id="krisengebietInput">
+                                    <option value="" selected hidden>Krisengebiet...</option>
+                                </select><br>
+                            </div>        
+                        </div>
+                            <!-- Angabe der Adresse bei Abholung -->
+                        <div class="col-md-6" id="beiAbholen">
+                            <div class="my-md-4"id="abholadresse">
+                                <p>Gebe hier deine <b>Abholadresse</b> ein:</p>
+                                <p> 
+                                    <div id="adresseFehler" class="text-danger"></div>
+                                    <div id="plzFehler" class="text-danger"></div>
+                                </p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="vornameInput" class="form-label ps-1 mb-0">Vorname</label>
+                                            <input type="text" name="vorname" class="form-control adresse" id="vornameInput" autocomplete="given-name">
+                                        </div>
+                                        <div class="col">
+                                            <label for="nachnameInput" class="form-label ps-1 mb-0">Nachname</label>
+                                            <input type="text" name="nachname" class="form-control adresse" id="nachnameInput" autocomplete="family-name">
+                                        </div>
+                                    </div>
+                                    <label for="straßeInput" class="form-label ps-1 mb-0 mt-2">Straße, Hausnummer</label>
+                                    <input type="text" name="straße" class="form-control adresse" id="straßeInput" autocomplete="street-address">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label for="plzInput" class="form-label ps-1 mb-0 mt-2">PLZ</label>
+                                            <input type="number" name="plz" class="form-control adresse" id="plzInput" autocomplete="postal-code">
+                                        </div>
+                                        <div class="col-8">
+                                            <label for="ortInput" class="form-label ps-1 mb-0 mt-2">Ort</label>
+                                            <input type="text" name="ort" class="form-control adresse" id="ortInput" autocomplete="address-level2">
+                                        </div>
+                                    </div>
+                                    <label for="emailInput" class="form-label ps-1 mb-0 mt-2">E-Mail-Adresse</label>
+                                    <input type="email" name="email" class="form-control adresse" id="emailInput" autocomplete="email">                       
+                                </div>
+                            </div>
+                            <!-- Auswahl des Abholtermins bei Abholung -->
+                            <div class="my-4" id="terminauswahl">
+                                <p>Wir holen deine Spende jeden Donnerstag zwischen 15 und 18 Uhr ab. Bitte wähle einen <b>Abholtermin</b>.</p>   
+                                <p id="abholterminFehler" class="text-danger"></p>
+                                <select name="abholtermin" class="form-select form-select-lg" id="abholterminInput" aria-label="Abholtermin">
+                                    <option value="" selected hidden>Abholtermin...</option>
+                                    <option id="termin1"></option>
+                                    <option id="termin2"></option>
+                                    <option id="termin3"></option>
+                                    <option id="termin4"></option>
+                                    <option id="termin5"></option>
+                                    <option id="termin6"></option>
+                                </select> 
+                            </div>         
+                        </div>
+                    </div>
+                    <!-- Button für Submit -->    
+                    <div class="text-center">
+                        <p id="fehler" class="text-danger"></p>   
+                        <button type="submit" class="btn btn-outline-primary btn-lg" id="submitButton">Senden</button>
+                    </div>    
+                </form>    
+                </div>    
+            </section>
+            <!-- Über-Uns-Abschnitt -->
+            <section class="pt-4 mt-5 border-top">
+                <h2 class="text-center mb-4 anchor-target" id="ueberUns">Über uns</h2>
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2 my-4">
+                        <img src="images/team.jpg" class="img-fluid" alt="Unser Team">
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <p>"Kleiderspenden Global e. V." wurde im Jahr 2019 von einer Gruppe engagierter Humanitärer gegründet. Was uns von anderen Organisationen unterscheidet ist unser Ansatz der Transparenz und Miteinbeziehung der Spender. Wir organisieren die Logistik und Verteilung von Kleiderspenden in verschiedenen Krisengebieten weltweit und sind bestrebt, die Bedürfnisse der lokalen Bevölkerung nach Kleidung zu erfüllen und ihnen ein Stück Normalität und Würde zurückzugeben. Wir arbeiten eng mit unseren Partnern vor Ort zusammen, um sicherzustellen, dass Ihre Spende direkt dorthin gelangt, wo sie am dringendsten benötigt wird.</p>
+                        <p>Unser Team besteht aus einem engagierten Netzwerk von Freiwilligen und ehrenamtlichen Helfern, die alle ihr Bestes geben, um sicherzustellen, dass die gespendeten Kleidungsstücke den Bedürftigen zugutekommen. Jede Person im Team trägt mit ihrer einzigartigen Erfahrung und Leidenschaft zur Realisierung unserer Mission bei.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Kontakt-Abschnitt -->
+            <section class="pt-4 mt-5 border-top text-center">
+                <h2 class="text-center mb-4 anchor-target" id="kontakt">Kontakt</h2>
+                <p class="lead my-4">Hast du Fragen? Dann kontaktiere uns gerne per Mail oder Telefon.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-3 col-lg-2">
+                        <p>
+                            <i class="bi bi-envelope" alt="E-Mail-Adresse"></i><br>
+                            <a class="link-dark" href="mailto:info@kleider-global.de">info@kleider-global.de</a>
+                        </p>
+                    </div>
+                    <div class="col-md-3 offset-md-1 col-lg-2 offset-lg-1">
+                        <p>
+                            <i class="bi bi-telephone" alt="Telefonnummer"></i><br>
+                            0123 / 4567 8901<br>
+                            <small class="text-muted">Mo - Do, 8 - 14 Uhr</small>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+              <nav class="navbar my-4">
+                <div class="container-md justify-content-center">
+                    <div class="navbar-nav mr-auto">
+                        <span class="navbar-text">&#169 2023</span>
+                    </div>
+                    <div class="navbar-nav px-4">
+                        <a class="nav-link" href="pages/impressum.html">Impressum</a>
+                    </div>
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="pages/datenschutz.html">Datenschutz</a>
+                    </div>
+                </div>
+              </nav>
+        </footer>
+        <script src="scripts/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
+</html>
